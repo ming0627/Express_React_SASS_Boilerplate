@@ -1,8 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import { BrowserRouter as Router } from "react-router-dom";
 import './index.scss';
 import App from './containers/App/App';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const Apps = () => (
+        <Router>
+         <App />
+        </Router>
+      );
+
+render(<Apps />, document.getElementById('root'));
 registerServiceWorker();
